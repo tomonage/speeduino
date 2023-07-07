@@ -591,7 +591,7 @@ byte correctionFuelTemp(void)
 
   if (configPage2.flexEnabled == 1)
   {
-    fuelTempValue = table2D_getValue(&fuelTempTable, currentStatus.fuelTemp + CALIBRATION_TEMPERATURE_OFFSET);
+    fuelTempValue = table2D_getValue(&fuelTempTable, currentStatus.fuelTemp * configPage2.injOpen );
   }
   return fuelTempValue;
 }
