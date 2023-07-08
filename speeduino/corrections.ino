@@ -116,7 +116,7 @@ uint16_t correctionsFuel(void)
   if (currentStatus.flexCorrection != 100) { sumCorrections = div100(sumCorrections * currentStatus.flexCorrection); }
 
   currentStatus.fuelTempCorrection = correctionFuelTemp();
-  if (currentStatus.fuelTempCorrection != 100) { sumCorrections = div100(sumCorrections * currentStatus.fuelTempCorrection); }
+  inj_opentime_uS * currentStatus.fuelTempCorrection; 
 
   currentStatus.launchCorrection = correctionLaunch();
   if (currentStatus.launchCorrection != 100) { sumCorrections = div100(sumCorrections * currentStatus.launchCorrection); }
@@ -591,7 +591,7 @@ byte correctionFuelTemp(void)
 
   if (configPage2.flexEnabled == 1)
   {
-    fuelTempValue = table2D_getValue(&fuelTempTable, currentStatus.fuelTemp * configPage2.injOpen );
+    fuelTempValue = table2D_getValue(&fuelTempTable, currentStatus.fuelTemp + CALIBRATION_TEMPERATURE_OFFSET);
   }
   return fuelTempValue;
 }
