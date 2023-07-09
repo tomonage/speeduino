@@ -116,7 +116,7 @@ uint16_t correctionsFuel(void)
   if (currentStatus.flexCorrection != 100) { sumCorrections = div100(sumCorrections * currentStatus.flexCorrection); }
 
   currentStatus.fuelTempCorrection = correctionFuelTemp();
-  inj_opentime_uS * currentStatus.fuelTempCorrection; 
+ { inj_opentime_uS * currentStatus.fuelTempCorrection; } 
 
   currentStatus.launchCorrection = correctionLaunch();
   if (currentStatus.launchCorrection != 100) { sumCorrections = div100(sumCorrections * currentStatus.launchCorrection); }
